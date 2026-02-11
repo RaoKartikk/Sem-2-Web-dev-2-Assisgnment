@@ -1,35 +1,41 @@
 let events = [];
 
-function addEvent(){
-    let eventTitle = document.getElementById("title").value;
-    let eventDate = document.getElementById("date").value;
-    let eventCategory = document.getElementById("category").value;
-    let eventDesc = document.getElementById("desc").value;
+function addEvent() {
+    let title = document.getElementById("title").value;
+    let date = document.getElementById("date").value;
+    let category = document.getElementById("category").value;
+    let desc = document.getElementById("desc").value;
 
-    
-    let newEntry = {
-        title: eventTitle, 
-        date: eventDate, 
-        category: eventCategory, 
-        desc: eventDesc
-    };
-
-    events.push(newEntry);
-    renderEvents();
-
-    document.getElementById("title").value = "";
-    document.getElementById("date").value = "";
-    document.getElementById("desc").value = "";
+    if (title !== "" && date !== "") {
+        let newEntry = { title, date, category, desc };
+        events.push(newEntry);
+        renderEvents();
+        
+        
+        document.getElementById("title").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("desc").value = "";
+    } else {
+        alert("Please enter a Title and Date!");
+    }
 }
 
-function renderEvents(){
-    let displayArea = document.getElementById("eventList");
-    displayArea.innerHTML = "";
+function addSampleEvents() {
+    let samples = [
+        { title: "Emifest", date: "2026-01-14", category: "Social", desc: "lorem ipsum" }
+    ];
+    events = [...events, ...samples];
+    renderEvents();
+}
 
-    events.forEach((item, id) => {
-        displayArea.innerHTML += `
+function renderEvents() {
+    let list = document.getElementById("eventList");
+    list.innerHTML = "";
+
+    events.forEach((item, index) => {
+        list.innerHTML += `
         <div class="event-card">
-            <button class="delete" onclick="deleteEvent(${id})">×</button>
+            <button class="delete" onclick="deleteEvent(${index})">×</button>
             <h3>${item.title}</h3>
             <div class="date">📅 ${item.date}</div>
             <span class="badge">${item.category}</span>
@@ -39,15 +45,22 @@ function renderEvents(){
     });
 }
 
-function deleteEvent(id){
-    events.splice(id, 1);
+function deleteEvent(index) {
+    events.splice(index, 1);
     renderEvents();
 }
 
-function clearEvents(){
-    events = []; 
+function clearEvents() {
+    events = [];
     renderEvents();
 }
 
-console.log("Event Dashboard Active");
-console.log(events);
+
+document.addEventListener('keydown', function(event) {
+    let keyDisplay = document.querySelector("#key-display span");
+    if (keyDisplay) {
+        keyDisplay.innerText = event.key;
+    }
+});
+
+console.log("Dashboard Active");

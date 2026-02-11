@@ -1,68 +1,201 @@
+/* --- Global Styles --- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background-color: #f8fafc; /* Very light slate gray */
     margin: 0;
-    padding: 0;
+    padding: 40px 20px;
+    color: #1e293b;
+    line-height: 1.5;
 }
 
 header {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 20px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 50px;
+    letter-spacing: -0.025em;
 }
 
+header::before {
+    content: "🎯 ";
+}
+
+/* --- Layout --- */
 .container {
-    width: 80%;
-    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* --- Card Architecture --- */
 .card {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    /* Soft, layered shadow for a 'floating' look */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 10px 15px -3px rgba(0,0,0,0.05);
+    border: 1px solid #f1f5f9;
 }
 
+.card:first-child { 
+    width: 360px; 
+    height: fit-content;
+}
+
+.events { 
+    flex: 1; 
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #334155;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* --- Refined Form Elements --- */
 label {
-    font-weight: bold;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 8px;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px 16px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
 }
 
-textarea {
-    height: 80px;
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
 }
 
+/* --- Modern Buttons --- */
 button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
+    font-family: inherit;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover {
-    background-color: #218838;
+.btn-primary {
+    background-color: #6366f1; /* Indigo */
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
-.top-buttons button {
-    background-color: #dc3545;
-    margin-bottom: 10px;
+.btn-primary:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-.top-buttons button:hover {
-    background-color: #c82333;
+.top-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
 }
 
+.btn-secondary {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    padding: 10px 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* --- Event Card Grid --- */
 #eventList {
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.event-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    border-color: #e2e8f0;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.event-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.125rem;
+    color: #1e293b;
+}
+
+.date {
+    font-size: 0.875rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge {
+    display: inline-block;
+    background: #eef2ff; /* Indigo tint */
+    color: #6366f1;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.delete {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.2s;
+}
+
+.event-card:hover .delete {
+    opacity: 1; /* Show on card hover */
 }

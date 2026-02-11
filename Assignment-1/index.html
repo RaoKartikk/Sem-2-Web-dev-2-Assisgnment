@@ -1,51 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>Event Dashboard</header>
+    <header>Smart Event Dashboard</header>
 
-<div class="container">
-    <div class="card">
-        <h2>Add New Event</h2>
+    <div class="container">
+        <div class="card">
+            <h2>Add New Event</h2>
 
-        <label>Event Title</label>
-        <input type="text" id="title">
+            <label>Event Title:</label>
+            <input type="text" id="title" placeholder="Enter event name">
 
-        <label>Event Date</label>
-        <input type="date" id="date">
+            <label>Event Date:</label>
+            <input type="date" id="date">
 
-        <label>Category</label>
-        <select id="category">
-            <option>Webinar</option>
-            <option>Meeting</option>
-            <option>home</option>
-            <option>other</option>
-        </select>
+            <label>Category:</label>
+            <select id="category">
+                <option>Conference</option>
+                <option>Social</option>
+                <option>Webinar</option>
+                <option>Meeting</option>
+            </select>
 
-        <label>Description</label>
-        <textarea id="desc"></textarea>
+            <label>Description:</label>
+            <textarea id="desc" placeholder="Enter description"></textarea>
 
-        <button onclick="addEvent()">Add Event</button>
-    </div>
-
-    <div class="card events">
-        <h2>My Events</h2>
-
-        <div class="top-buttons">
-            <button onclick="clearEvents()">Clear All Events</button>
+            <button class="btn-primary" onclick="addEvent()">Add Event</button>
         </div>
 
-        <div id="eventList"></div>
+        <div class="card events">
+            <h2>My Events</h2>
+            <div class="top-buttons">
+                <button class="btn-secondary" onclick="clearEvents()">Clear All Events</button>
+                <button class="btn-secondary" onclick="addSampleEvents()">Add Sample Events</button>
+            </div>
+
+            <div id="eventList">
+                </div>
+        </div>
     </div>
 
-</div>
+    <div class="container footer-section">
+        <div class="card full-width">
+            <h2>DOM Manipulation Demo</h2>
+            <div class="demo-content">
+                <p><strong>innerText vs innerHTML vs textContent</strong></p>
+                <ul>
+                    <li><strong>Original HTML:</strong> <code>&lt;strong&gt;Bold Text&lt;/strong&gt;</code> with spaces</li>
+                    <li><strong>innerHTML:</strong> Renders HTML tags → <b>Bold Text</b> with spaces</li>
+                    <li><strong>innerText:</strong> Removes HTML, collapses spaces → Bold Text with spaces</li>
+                    <li><strong>textContent:</strong> Removes HTML, keeps spaces → Bold Text with spaces</li>
+                </ul>
+                <p id="key-display">You pressed: <span style="color: #6366f1; font-weight: bold;">None</span></p>
+            </div>
+        </div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
