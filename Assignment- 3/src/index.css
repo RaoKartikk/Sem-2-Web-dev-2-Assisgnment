@@ -1,0 +1,157 @@
+/* Global Reset and Font */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Standard font from Assignment-1 */
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff; /* White background */
+  color: #000000;
+}
+
+/* Main Layout Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+/* Blue Card Style for Form and Table */
+.form-container, .table-container {
+  background: #4f85c7; /* Medium blue background from Assignment-1 */
+  border-radius: 12px;
+  padding: 20px;
+  color: #ffffff;
+}
+
+/* Form Section (Left Column) */
+.form-container {
+  width: 35%;
+  min-width: 300px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+}
+
+/* Table Section (Right Column) */
+.table-container {
+  flex: 1;
+  width: 60%;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px; /* Adds space between rows to make them look like cards */
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+tr {
+  background: #f3f3f3; /* Light gray rows to mimic demo cards */
+}
+
+td {
+  padding: 15px;
+  color: #333;
+}
+
+/* Rounded corners for the "card" rows */
+tr td:first-child { border-radius: 10px 0 0 10px; }
+tr td:last-child { border-radius: 0 10px 10px 0; }
+
+/* Buttons styling */
+button {
+  background: #1fb6a6; /* Teal color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #16998b;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.status-pass {
+  background: #a2df53; /* Green for pass */
+}
+
+.status-fail {
+  background: #ef4444; /* Red for fail */
+}
+
+.action-cell {
+  display: flex;
+  gap: 10px;
+}
+
+.action-cell input {
+  width: 80px;
+  margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .form-container, .table-container {
+    width: 100%;
+  }
+}
