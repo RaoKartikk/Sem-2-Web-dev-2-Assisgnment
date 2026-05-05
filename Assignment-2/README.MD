@@ -8,7 +8,7 @@ A responsive web application that tracks real-time weather data while demonstrat
 
 Below is the UI of the application:
 
-![App Screenshot](screenshot.png)
+![App Screenshot](./screenshot.png)
 
 ---
 
