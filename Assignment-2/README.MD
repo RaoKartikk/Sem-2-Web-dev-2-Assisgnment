@@ -1,35 +1,84 @@
 # ⛅ ASYNC WEATHER TRACKER
 
-A responsive web application that tracks real-time weather data while demonstrating asynchronous JavaScript execution and Event Loop logging[cite: 1].
+A responsive web application that tracks real-time weather data while demonstrating asynchronous JavaScript execution and Event Loop logging.
+
+---
 
 ## 📸 Interface Preview
 
-As shown in `Screenshot 2026-05-05 151905.png` and `image_026f9b.png`, the application features a clean, high-contrast dashboard[cite: 1]:
+Below is the UI of the application:
 
-![App Screenshot](image_026f9b.png)
+![App Screenshot](Screenshot%202026-05-05%20151905.png)
+
+---
 
 ## 🛠️ Features
 
-*   **City Search**: Submit city names via a dedicated form to fetch live weather data[cite: 1].
-*   **Search History**: Automatically logs and displays your recent searches in a persistent list[cite: 1].
-*   **Weather Display**: A dynamic card that presents current weather information once a search is performed[cite: 1].
-*   **Event Loop Console**: A specialized UI component designed to visualize the background "Console - Event Loop" processes[cite: 1].
+- **City Search**  
+  Enter any city name to fetch live weather data.
+
+- **Search History**  
+  Keeps track of previously searched cities.
+
+- **Weather Display**  
+  Shows temperature, conditions, and other details dynamically.
+
+- **Event Loop Console**  
+  Visualizes asynchronous JavaScript execution and logs event loop activity.
+
+---
 
 ## 📂 Project Structure
 
-The project relies on three primary files defined in `index.html`[cite: 1]:
+| File        | Description |
+|------------|------------|
+| `index.html` | Main structure of the app |
+| `style.css`  | UI styling (blue theme + cards) |
+| `script.js`  | Handles API calls & async logic |
 
-| File | Description |
-| :--- | :--- |
-| `index.html` | Defines the semantic structure, including the two-column dashboard and console[cite: 1]. |
-| `style.css` | Handles the layout, blue theme, and card-based design[cite: 1]. |
-| `script.js` | Manages the asynchronous logic and UI updates[cite: 1]. |
+---
 
 ## 🚀 How to Run
 
-1.  Clone this repository to your local machine.
-2.  Ensure `index.html` and your image files like `Screenshot 2026-05-05 151905.png` are in the project root[cite: 1].
-3.  Open `index.html` in any modern web browser to launch the application[cite: 1].
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/async-weather-tracker.git
+   ```
+
+2. Navigate into the project folder:
+   ```bash
+   cd async-weather-tracker
+   ```
+
+3. Make sure your screenshot file is in the root folder:
+   ```
+   Screenshot 2026-05-05 151905.png
+   ```
+
+4. Open:
+   ```
+   index.html
+   ```
+   in your browser.
 
 ---
-*Developed as a demonstration of Asynchronous JavaScript.*
+
+## 💡 Tech Used
+
+- HTML5  
+- CSS3  
+- JavaScript (Async / Await, Fetch API)  
+
+---
+
+## 📌 Notes
+
+- Ensure internet connection for API calls.
+- You can enhance it by adding:
+  - Loader animations  
+  - Error handling UI  
+  - Dark mode  
+
+---
+
+✨ *Developed as a demonstration of Asynchronous JavaScript and Event Loop behavior.*
