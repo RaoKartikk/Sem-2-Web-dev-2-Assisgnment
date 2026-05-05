@@ -1,32 +1,35 @@
 # ⛅ ASYNC WEATHER TRACKER
 
-A dynamic, asynchronous web application that allows users to track real-time weather information while visualizing the JavaScript Event Loop in action.
+A responsive web application that tracks real-time weather data while demonstrating asynchronous JavaScript execution and Event Loop logging[cite: 1].
 
-"C:\Users\yadav\OneDrive\Desktop\Screenshot 2026-05-05 151905.png"
+## 📸 Interface Preview
 
-## 🚀 Features
+As shown in `Screenshot 2026-05-05 151905.png` and `image_026f9b.png`, the application features a clean, high-contrast dashboard[cite: 1]:
 
-*   **Real-Time Search:** Look up weather data by city name using asynchronous API calls.
-*   **Search History:** Keeps a running log of previously searched cities for quick reference.
-*   **Weather Insights:** Displays detailed weather information in a clean, card-based interface.
-*   **Event Loop Console:** A dedicated "Console - Event Loop" section designed to visualize or log background processes, highlighting the asynchronous nature of the app.
+![App Screenshot](image_026f9b.png)
 
-## 🛠️ Project Structure
+## 🛠️ Features
 
-The project is built with a clean separation of concerns:
+*   **City Search**: Submit city names via a dedicated form to fetch live weather data[cite: 1].
+*   **Search History**: Automatically logs and displays your recent searches in a persistent list[cite: 1].
+*   **Weather Display**: A dynamic card that presents current weather information once a search is performed[cite: 1].
+*   **Event Loop Console**: A specialized UI component designed to visualize the background "Console - Event Loop" processes[cite: 1].
 
-*   `index.html`: Defines the semantic structure and layout of the dashboard.
-*   `style.css`: Contains the styling for the vibrant blue theme and responsive card layout.
-*   `script.js`: Handles the logic for API fetching, DOM manipulation, and search history management.
+## 📂 Project Structure
 
-## 💻 Technical Stack
+The project relies on three primary files defined in `index.html`[cite: 1]:
 
-*   **HTML5:** Semantic markup for the dashboard layout.
-*   **CSS3:** Flexbox/Grid for the multi-column layout and custom card designs.
-*   **JavaScript (ES6+):** Utilizes `Async/Await`, Promises, and Fetch API for data retrieval.
+| File | Description |
+| :--- | :--- |
+| `index.html` | Defines the semantic structure, including the two-column dashboard and console[cite: 1]. |
+| `style.css` | Handles the layout, blue theme, and card-based design[cite: 1]. |
+| `script.js` | Manages the asynchronous logic and UI updates[cite: 1]. |
 
-## 📖 How to Use
+## 🚀 How to Run
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/async-weather-tracker.git](https://github.com/yourusername/async-weather-tracker.git)
+1.  Clone this repository to your local machine.
+2.  Ensure `index.html` and your image files like `Screenshot 2026-05-05 151905.png` are in the project root[cite: 1].
+3.  Open `index.html` in any modern web browser to launch the application[cite: 1].
+
+---
+*Developed as a demonstration of Asynchronous JavaScript.*
